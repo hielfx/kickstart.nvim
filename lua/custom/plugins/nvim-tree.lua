@@ -64,6 +64,6 @@ return {
   cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeFocus', 'NvimTreeFindFileToggle' },
   event = 'User DirOpened',
   keys = {
-    { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'NvimTree [E]xplorer', silent = true, noremap = true },
+    { '<leader>e', '<cmd>NvimTreeFindFileToggle<cr>', desc = 'NvimTree [E]xplorer', silent = true, noremap = true },
   },
 }
