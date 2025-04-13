@@ -438,8 +438,10 @@ require('lazy').setup({
         -- pickers = {}
         defaults = {
           layout_strategy = 'vertical',
-          layout_config = {
-            preview_height = 0.6,
+          picker = {
+            layout_config = {
+              preview_height = 0.65,
+            },
           },
         },
         extensions = {
