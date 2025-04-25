@@ -566,6 +566,8 @@ require('lazy').setup({
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
+          local default_fname_width = 0.5
+
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
@@ -574,13 +576,17 @@ require('lazy').setup({
           -- Find references for the word under your cursor.
           map('gr', function()
             require('telescope.builtin').lsp_references {
-              fname_width = 0.5,
+              fname_width = default_fname_width,
             }
           end, '[G]oto [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('gI', function()
+            require('telescope.builtin').lsp_implementations {
+              fname_width = default_fname_width,
+            }
+          end, '[G]oto [I]mplementation')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
