@@ -59,6 +59,10 @@ return {
   config = function()
     require('nvim-tree').setup {
       on_attach = remap_keymaps,
+      update_focused_file = {
+        enable = true,
+        -- update_cwd = true,
+      },
     }
   end,
   cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeFocus', 'NvimTreeFindFileToggle' },
